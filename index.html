@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kagitapu Jeevana Jyothi | Portfolio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Serif+4:wght@400;600&display=swap">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#f2f5fb; --surface:#ffffff; --ink:#14213d; --muted:#4a5875; --line:#d5dcec;
+  --accent:#2f5bff; --accent-ink:#ffffff; --mark:#ffb703;
+  --head:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --text:"Source Serif 4",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1424; --surface:#172038; --ink:#e8edfa; --muted:#a3b0cc; --line:#2a3656;
+    --accent:#7a98ff; --accent-ink:#0e1424;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e1424; --surface:#172038; --ink:#e8edfa; --muted:#a3b0cc; --line:#2a3656;
+  --accent:#7a98ff; --accent-ink:#0e1424;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--text);font-size:1.0625rem;line-height:1.65}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--mark);outline-offset:3px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.25rem}
+h1,h2,h3{font-family:var(--head);line-height:1.1;margin:0}
+
+nav{display:flex;gap:1.25rem;flex-wrap:wrap;padding:1.25rem 0;font-family:var(--head);font-weight:500;font-size:.95rem}
+nav a{color:var(--muted);text-decoration:none}
+nav a:hover{color:var(--ink)}
+
+.hero{display:grid;gap:2.5rem;padding:2.5rem 0 4rem;align-items:center}
+.hero h1{font-size:clamp(2.6rem,9vw,5rem);font-weight:800;letter-spacing:-.03em}
+.hero h1 span{display:block}
+.hero p.role{font-family:var(--head);font-weight:500;font-size:1.2rem;color:var(--muted);margin:1.25rem 0 1.75rem}
+.btns{display:flex;gap:.75rem;flex-wrap:wrap}
+.btn{font-family:var(--head);font-weight:700;font-size:1rem;padding:.8rem 1.4rem;border-radius:.6rem;text-decoration:none;border:2px solid var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{color:var(--accent)}
+
+.editor{background:#0b1226;color:#e8edfa;border-radius:.9rem;overflow:hidden;border:1px solid #26335a;max-width:100%}
+.tabs{display:flex;background:#101a36;border-bottom:1px solid #26335a}
+.tabs button{font-family:var(--head);font-weight:500;font-size:.95rem;color:#a3b0cc;background:none;border:0;border-bottom:3px solid transparent;padding:.8rem 1.1rem;cursor:pointer}
+.tabs button[aria-selected="true"]{color:#fff;border-bottom-color:var(--mark)}
+.editor pre{margin:0;padding:1.25rem;font:.95rem/1.7 ui-monospace,Menlo,Consolas,monospace;overflow-x:auto;min-height:9.5rem}
+.out{padding:.8rem 1.25rem;border-top:1px solid #26335a;font:.9rem ui-monospace,Menlo,Consolas,monospace;color:#9fe3b0}
+
+section{padding:3.5rem 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(1.7rem,5vw,2.4rem);font-weight:700;letter-spacing:-.02em;margin-bottom:1.5rem}
+.about p{max-width:42rem;margin:0}
+
+.langs{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(10rem,1fr));margin-bottom:2rem}
+.lang{background:var(--surface);border:1px solid var(--line);border-radius:.8rem;padding:1.1rem 1.2rem}
+.lang strong{font-family:var(--head);font-size:1.6rem;display:block}
+.lang span{color:var(--muted);font-size:.95rem}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;padding:0;margin:0;list-style:none}
+.chips li{background:var(--surface);border:1px solid var(--line);border-radius:2rem;padding:.4rem 1rem;font-size:.98rem}
+h3{font-size:1.15rem;font-weight:700;margin-bottom:.8rem}
+
+.timeline{list-style:none;margin:0;padding:0 0 0 1.5rem;border-left:3px solid var(--line)}
+.timeline li{position:relative;padding-bottom:1.75rem}
+.timeline li:last-child{padding-bottom:0}
+.timeline li:before{content:"";position:absolute;left:calc(-1.5rem - 8px);top:.45rem;width:13px;height:13px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+.timeline li:first-child:before{background:var(--accent)}
+.timeline .yr{font-family:var(--head);font-weight:700;color:var(--accent);font-size:.95rem}
+.timeline h3{margin:.1rem 0 .1rem}
+.timeline p{margin:0;color:var(--muted)}
+
+.contact-list{list-style:none;margin:0;padding:0;display:grid;gap:.9rem;font-size:1.1rem}
+.contact-list b{font-family:var(--head);display:inline-block;min-width:5.5rem}
+footer{padding:2rem 0 3rem;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+
+@media (min-width:56rem){
+  .hero{grid-template-columns:1.1fr 1fr;padding-top:4rem}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav aria-label="Main">
+    <a href="#about">About</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#contact">Contact</a>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <h1><span>Kagitapu</span><span>Jeevana Jyothi</span></h1>
+      <p class="role">B.Tech Computer Science and Engineering student</p>
+      <div class="btns">
+        <a class="btn primary" href="#contact">Get in touch</a>
+        <a class="btn ghost" href="#skills">See my skills</a>
+      </div>
+    </div>
+    <div class="editor" aria-label="Hello program in three languages">
+      <div class="tabs" role="tablist">
+        <button role="tab" aria-selected="true" data-l="c">C</button>
+        <button role="tab" aria-selected="false" data-l="java">Java</button>
+        <button role="tab" aria-selected="false" data-l="py">Python</button>
+      </div>
+      <pre id="code" aria-live="polite"></pre>
+      <div class="out">Output: Hi, I'm Jeevana!</div>
+    </div>
+  </header>
+
+  <section id="about" class="about">
+    <h2>About me</h2>
+    <p>I'm a second-year B.Tech student in Computer Science and Engineering with a foundation in C, Java, and Python. I'm eager to learn new technologies, build strong problem-solving skills, and grow through hands-on projects and teamwork.</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <h3>Programming languages</h3>
+    <div class="langs">
+      <div class="lang"><strong>C</strong><span>Foundation</span></div>
+      <div class="lang"><strong>Java</strong><span>Basics</span></div>
+      <div class="lang"><strong>Python</strong><span>Basics</span></div>
+    </div>
+    <h3>Soft skills</h3>
+    <ul class="chips">
+      <li>Communication</li><li>Teamwork</li><li>Problem solving</li><li>Time management</li><li>Quick learning and adaptability</li>
+    </ul>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <ol class="timeline">
+      <li><span class="yr">2025 – 2029</span><h3>B.Tech in Computer Science and Engineering</h3><p>Sri Vasavi Engineering College</p></li>
+      <li><span class="yr">2023 – 2025</span><h3>Intermediate</h3><p>Sri Chaitanya</p></li>
+      <li><span class="yr">2019</span><h3>Secondary School Certificate (SSC)</h3><p>Z.P. High School, Siragalapelli</p></li>
+    </ol>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <ul class="contact-list">
+      <li><b>Email</b> <a href="mailto:jeevana.kagitapu1234@gmail.com">jeevana.kagitapu1234@gmail.com</a></li>
+      <li><b>Phone</b> <a href="tel:+918142984498">+91-8142984498</a></li>
+      <li><b>Location</b> Palakollu, Andhra Pradesh, India</li>
+    </ul>
+  </section>
+
+  <footer>Kagitapu Jeevana Jyothi</footer>
+</div>
+<script>
+var code={
+ c:'#include <stdio.h>\n\nint main() {\n    printf("Hi, I\'m Jeevana!\\n");\n    return 0;\n}',
+ java:'public class Hello {\n    public static void main(String[] args) {\n        System.out.println("Hi, I\'m Jeevana!");\n    }\n}',
+ py:'print("Hi, I\'m Jeevana!")'
+};
+var pre=document.getElementById('code'),tabs=document.querySelectorAll('.tabs button');
+function show(l){
+  pre.textContent=code[l];
+  tabs.forEach(function(b){b.setAttribute('aria-selected',b.dataset.l===l?'true':'false')});
+}
+tabs.forEach(function(b){b.addEventListener('click',function(){show(b.dataset.l)})});
+show('c');
+</script>
+</body>
+</html>
